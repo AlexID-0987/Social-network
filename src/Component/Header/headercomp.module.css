@@ -1,0 +1,16 @@
+.item1{
+    width: auto;
+}
+.item1 img{
+    width: 5%;
+}
+.text{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 4em;
+    float: right;
+    
+    
+}
+.text1{
+  color: rgb(250, 90, 32); 
+}

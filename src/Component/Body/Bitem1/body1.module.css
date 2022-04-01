@@ -1,0 +1,5 @@
+.item{
+    display: grid;
+    grid-template-areas: 
+    'it1 it2 it2';
+}

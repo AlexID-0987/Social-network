@@ -1,0 +1,8 @@
+.item1{
+    font-size: 2em;
+}
+.item{
+    padding: 1em;
+    display: grid;
+    grid-area: it1;
+}

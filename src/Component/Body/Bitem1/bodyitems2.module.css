@@ -1,0 +1,9 @@
+.item2{
+    font-size: 2em;
+    color:white;
+}
+.item{
+    padding: 1em;
+    display: grid;
+    grid-area: it2;
+}

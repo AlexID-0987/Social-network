@@ -1,0 +1,6 @@
+.itembody{
+    background-color: brown;
+}
+.itembody{
+    grid-area: body;
+}

@@ -1,0 +1,6 @@
+.navbar{
+    background-color: darkblue;
+}
+.footer{
+    grid-area: foot;
+  }
