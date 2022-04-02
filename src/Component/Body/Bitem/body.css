@@ -4,3 +4,7 @@
 .itembody{
     grid-area: body;
 }
+.pole{
+    text-align: center;
+    margin: 2em;
+}

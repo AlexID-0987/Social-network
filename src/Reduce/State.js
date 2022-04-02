@@ -1,3 +1,5 @@
+import { renderproject } from "../Render"
+
 let state={
     Statebody:{
         Peoples: [
@@ -17,4 +19,12 @@ let state={
         ]
     }
 }
+export let pushitem=(newitem)=>{
+    let addit={
+        item:newitem
+    }
+  state.Statebody.Array.push(addit)
+  renderproject(state)
+}
+
 export default state
