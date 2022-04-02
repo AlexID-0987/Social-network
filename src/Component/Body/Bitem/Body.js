@@ -10,9 +10,11 @@ function Body(props) {
     let Aritem = props.Arr.map(i => <Bodycomponent mess={i.item} />)
     let newPost=React.createRef();
     let visib = () => {
+        props.Add();
+    }
+    let onPostChange=()=>{
         let newtext = newPost.current.value;
-        props.Add(newtext);
-        newPost.current.value=''
+        props.update(newtext);
     }
     return (
 
@@ -20,7 +22,7 @@ function Body(props) {
             <h1>Body</h1>
             <div className='pole'>
                 <div>
-                    <textarea ref={newPost}></textarea>
+                    <textarea ref={newPost} onChange={onPostChange} value={props.newPostText}/>
                 </div>
                 <div>
                     <button onClick={visib}>Add</button>

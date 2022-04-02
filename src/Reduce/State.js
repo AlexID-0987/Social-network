@@ -16,15 +16,18 @@ let state={
             { item: 'Hello' },
             { item: 'I Love' },
             { item: 'Good morning' }
-        ]
+        ],
+        NewPostText:'Hello'
     }
 }
-export let pushitem=(newitem)=>{
-    let addit={
-        item:newitem
-    }
-  state.Statebody.Array.push(addit)
-  renderproject(state)
+export let pushitem=()=>{
+    let addit = { item: state.Statebody.NewPostText }
+    state.Statebody.Array.push(addit)
+    state.Statebody.NewPostText=''
+    renderproject(state)
 }
-
+export let Updatepost=(newpost)=>{
+    state.Statebody.NewPostText=newpost;
+    renderproject(state)
+}
 export default state

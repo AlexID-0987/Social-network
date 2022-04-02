@@ -14,8 +14,14 @@ function App(props) {
     <Navbar/>
     <div className='itembody'>
       <Routes>
-        <Route path='/' element={<Body Arr={props.Arr} Add={props.Addpost}/>}/>
-        <Route path='/body' element={<Body Arr={props.Arr} Add={props.Addpost}/>}/>
+        <Route path='/' element={<Body Arr={props.Arr} 
+        Add={props.Addpost} 
+        newPostText={props.Newtext}
+        update={props.updatepost}/>}/>
+        <Route path='/body' element={<Body Arr={props.Arr} 
+        Add={props.Addpost} 
+        newPostText={props.Newtext}
+        update={props.updatepost}/>}/>
         <Route path='/body1' element={<Body1 Peoples={props.Peoples} Arraymessage={props.Arraymessage}/>}/>
         <Route path='/body2' element={<Body2 />}/>
       </Routes>
