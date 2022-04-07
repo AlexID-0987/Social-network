@@ -19,24 +19,32 @@ let store={
             NewPostText:'Hello'
         }
     },
+    _renderproject() {
+        console.log('State setstate')
+    },
     getstate(){
         return this._state;
-    },
-    renderproject() {
-        console.log('State setstate')
     },
     Subscribe(observer){
         this.renderproject=observer
     },
-    pushitem(){
+    _pushitem(){
         let addit = { item:this._state.Statebody.NewPostText }
         this._state.Statebody.Array.push(addit)
         this._state.Statebody.NewPostText=''
         this.renderproject(this._state)
     },
-    Updatepost(newpost){
+    _Updatepost(newpost){
         this._state.Statebody.NewPostText=newpost;
         this.renderproject(this._state)
+    },
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            this._pushitem()
+        }
+        else if (action.type === 'UPDATE-POST') {
+            this._Updatepost(action.newpost)
+        }
     }
     
 }

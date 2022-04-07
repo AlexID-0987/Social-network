@@ -12,9 +12,8 @@ let renderproject=(state)=>{
     <BrowserRouter>
         <App Peoples={state.Statebody.Peoples}
           Arraymessage={state.Statebody.Arraymessage}
-          Arr={state.Statebody.Array} Addpost={store.pushitem.bind(store)} 
-          Newtext={state.Statebody.NewPostText}
-          updatepost={store.Updatepost.bind(store)}/>
+          Arr={state.Statebody.Array} dispatch={store.dispatch.bind(store)} 
+          Newtext={state.Statebody.NewPostText}/>
       </BrowserRouter>
     </>,
     document.getElementById('root')

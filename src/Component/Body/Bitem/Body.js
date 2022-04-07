@@ -10,11 +10,12 @@ function Body(props) {
     let Aritem = props.Arr.map(i => <Bodycomponent mess={i.item} />)
     let newPost=React.createRef();
     let visib = () => {
-        props.Add();
+        props.dispatch({type:'ADD-POST'});
     }
     let onPostChange=()=>{
         let newtext = newPost.current.value;
-        props.update(newtext);
+        let newaction={type:'UPDATE-POST', newpost:newtext}
+        props.dispatch(newaction);
     }
     return (
 
