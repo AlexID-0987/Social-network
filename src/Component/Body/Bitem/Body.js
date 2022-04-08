@@ -1,6 +1,7 @@
 import React from 'react';
 import Bodycomponent from './Bodycomponent';
 import "../Bitem/body.css"
+import { actionCreiterAddPost,actionCreiterUpdatePost } from '../../../Reduce/State';
 function Body(props) {
     /* let Array = [
         { item: 'Hello' },
@@ -10,11 +11,11 @@ function Body(props) {
     let Aritem = props.Arr.map(i => <Bodycomponent mess={i.item} />)
     let newPost=React.createRef();
     let visib = () => {
-        props.dispatch({type:'ADD-POST'});
+        props.dispatch(actionCreiterAddPost());
     }
     let onPostChange=()=>{
         let newtext = newPost.current.value;
-        let newaction={type:'UPDATE-POST', newpost:newtext}
+        let newaction=actionCreiterUpdatePost(newtext)
         props.dispatch(newaction);
     }
     return (

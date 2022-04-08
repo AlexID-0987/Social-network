@@ -1,3 +1,4 @@
+const ADD_POST= 'ADD-POST',UPDATE_POST='UPDATE-POST';
 let store={
     _state:{
         Statebody:{
@@ -39,19 +40,19 @@ let store={
         this.renderproject(this._state)
     },
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             this._pushitem()
         }
-        else if (action.type === 'UPDATE-POST') {
+        else if (action.type === UPDATE_POST) {
             this._Updatepost(action.newpost)
         }
     }
     
 }
-        
-    
-     
-    
+
+
+export const actionCreiterAddPost=()=>({type:ADD_POST})   
+export const actionCreiterUpdatePost=(newtext)=>({type:UPDATE_POST,newpost:newtext})
     
 
 
