@@ -1,8 +1,9 @@
 import React from 'react';
 import Bodycomponent from './Bodycomponent';
 import "../Bitem/body.css"
-import { actionCreiterAddPost,actionCreiterUpdatePost } from '../../../Reduce/State';
+import { actionCreiterAddPost,actionCreiterUpdatePost } from '../../../Reduce/Body-reduser';
 function Body(props) {
+    
     /* let Array = [
         { item: 'Hello' },
         { item: 'I Love' },
@@ -14,12 +15,11 @@ function Body(props) {
         props.dispatch(actionCreiterAddPost());
     }
     let onPostChange=()=>{
-        let newtext = newPost.current.value;
-        let newaction=actionCreiterUpdatePost(newtext)
+        let newtext1 = newPost.current.value;
+        let newaction=actionCreiterUpdatePost(newtext1)
         props.dispatch(newaction);
     }
     return (
-
         <div>
             <h1>Body</h1>
             <div className='pole'>
@@ -32,8 +32,7 @@ function Body(props) {
             </div>
             {Aritem}
         </div>
-
-
+        
     );
 }
 

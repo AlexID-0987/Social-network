@@ -11,9 +11,12 @@ let renderproject=(state)=>{
     <>
     <BrowserRouter>
         <App Peoples={state.Statebody.Peoples}
-          Arraymessage={state.Statebody.Arraymessage}
-          Arr={state.Statebody.Array} dispatch={store.dispatch.bind(store)} 
-          Newtext={state.Statebody.NewPostText}/>
+          Arraymessage={state.Statebody.Arraymessage} 
+          Arr={state.Statebody.Array} dispatch={store.dispatch.bind(store)}
+          Newtext={state.Statebody.NewPostText} 
+          NewMessText={state.Statebody.NewMessageText}
+          store={store}/>
+          
       </BrowserRouter>
     </>,
     document.getElementById('root')

@@ -1,4 +1,4 @@
-const ADD_POST= 'ADD-POST',UPDATE_POST='UPDATE-POST';
+import bodyReducer from "./Body-reduser";
 let store={
     _state:{
         Statebody:{
@@ -9,15 +9,16 @@ let store={
             ],
             Arraymessage: [
                 { id: 1, mess: 'Hello I a`m UKRAINE' },
-                { id: 4, mess: 'Hello' },
-                { id: 67, mess: 'I love live' }
+                { id: 2, mess: 'Hello' },
+                { id: 3, mess: 'I love live' }
             ],
             Array: [
                 { item: 'Hello' },
                 { item: 'I Love' },
                 { item: 'Good morning' }
             ],
-            NewPostText:'Hello'
+            NewPostText:'Hello',
+            NewMessageText:''
         }
     },
     _renderproject() {
@@ -29,35 +30,13 @@ let store={
     Subscribe(observer){
         this.renderproject=observer
     },
-    _pushitem(){
-        let addit = { item:this._state.Statebody.NewPostText }
-        this._state.Statebody.Array.push(addit)
-        this._state.Statebody.NewPostText=''
-        this.renderproject(this._state)
-    },
-    _Updatepost(newpost){
-        this._state.Statebody.NewPostText=newpost;
-        this.renderproject(this._state)
-    },
+    
+    
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            this._pushitem()
-        }
-        else if (action.type === UPDATE_POST) {
-            this._Updatepost(action.newpost)
-        }
+        this._state=bodyReducer(this._state,action)
+        this.renderproject(this._state)
     }
     
 }
-
-
-export const actionCreiterAddPost=()=>({type:ADD_POST})   
-export const actionCreiterUpdatePost=(newtext)=>({type:UPDATE_POST,newpost:newtext})
-    
-
-
-
-
-
 export default store
 window.store=store;
