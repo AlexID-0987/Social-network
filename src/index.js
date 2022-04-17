@@ -4,12 +4,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import store from './Reduce/State'
+import store from './Reduce/Redux-store'
+import {Provider} from "react-redux";
 
 let renderproject=(state)=>{
   ReactDOM.render(
     <>
-    <BrowserRouter>
+    <Provider store={store}>
         <App Peoples={state.Statebody.Peoples}
           Arraymessage={state.Statebody.Arraymessage} 
           Arr={state.Statebody.Array} dispatch={store.dispatch.bind(store)}
@@ -17,12 +18,15 @@ let renderproject=(state)=>{
           NewMessText={state.Statebody.NewMessageText}
           store={store}/>
           
-      </BrowserRouter>
+      </Provider>
     </>,
     document.getElementById('root')
   );
 }
 renderproject(store.getstate())
-store.Subscribe(renderproject)
+store.Subscribe(()=>{
+  let state=store.getState()
+  renderproject(state)
+})
 
 

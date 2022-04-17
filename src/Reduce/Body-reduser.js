@@ -1,6 +1,25 @@
 const ADD_POST= 'ADD-POST',UPDATE_POST='UPDATE-POST';
 const UPDATE_NEW_MESSAGE_TEXT='UPDATE-TEXT',SEND_MESS='SEND-MESS';
-const bodyReducer =(state,action)=>{
+
+let initialstate={Peoples: [
+        { id: 2, name: 'Alex' },
+        { id: 5, name: 'Oleg' },
+        { id: 45, name: 'Helga' }
+    ],
+    Arraymessage: [
+        { id: 1, mess: 'Hello I a`m UKRAINE' },
+        { id: 2, mess: 'Hello' },
+        { id: 3, mess: 'I love live' }
+    ],
+    Array: [
+        { item: 'Hello' },
+        { item: 'I Love' },
+        { item: 'Good morning' }
+    ],
+    NewPostText:'Hello',
+    NewMessageText:''
+}
+const bodyReducer =(state =initialstate,action)=>{
     switch (action.type) {
         case ADD_POST:
             let addit = { item: state.Statebody.NewPostText }

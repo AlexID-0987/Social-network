@@ -1,5 +1,5 @@
 import React from 'react';
-import store from '../../../Reduce/State';
+import store from '../../../Reduce/Store';
 import bc1 from '../Bitem1/body1.module.css'
 import Bodyitem1 from '../Bitem1/Bodyitems1';
 import Bodyitem2 from '../Bitem1/Bodyitems2';
