@@ -24,10 +24,10 @@ let store={
     _renderproject() {
         console.log('State setstate')
     },
-    getstate(){
+    getState(){
         return this._state;
     },
-    Subscribe(observer){
+    subscribe(observer){
         this.renderproject=observer
     },
     

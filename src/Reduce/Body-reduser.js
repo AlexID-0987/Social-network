@@ -1,7 +1,8 @@
 const ADD_POST= 'ADD-POST',UPDATE_POST='UPDATE-POST';
 const UPDATE_NEW_MESSAGE_TEXT='UPDATE-TEXT',SEND_MESS='SEND-MESS';
 
-let initialstate={Peoples: [
+let initialstate={
+    Peoples: [
         { id: 2, name: 'Alex' },
         { id: 5, name: 'Oleg' },
         { id: 45, name: 'Helga' }
