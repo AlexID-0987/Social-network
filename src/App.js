@@ -9,26 +9,26 @@ import Navbar from './Component/Navbar/Navbar';
 
 function App(props) {
   return (
-    <div className='first'>
-    <Header/>
-    <Navbar/>
-    <div className='itembody'>
-      <Routes>
-        <Route path='/' element={<Body Arr={props.Arr} 
-        dispatch={props.dispatch} 
-        newPostText={props.Newtext}/>}/>
-        <Route path='/body' element={<Body Arr={props.Arr} 
-        dispatch={props.dispatch} 
-        newPostText={props.Newtext}/>}/>
-        <Route path='/body1' element={<Body1 Peoples={props.Peoples} 
-        Arraymessage={props.Arraymessage} 
-        dispatch={props.dispatch}
-        NewMessText={props.NewMessText}/>}/>
-        <Route path='/body2' element={<Body2 />}/>
-      </Routes>
-    </div>
-    <Footer/>
-    </div>
+      <div className='first'>
+        <Header/>
+        <Navbar/>
+        <div className='itembody'>
+          <Routes>
+            <Route path='/' element={<Body Arr={props.Arr}
+                                           dispatch={props.dispatch}
+                                           newPostText={props.Newtext}/>}/>
+            <Route path='/body' element={<Body Arr={props.Arr}
+                                               dispatch={props.dispatch}
+                                               newPostText={props.Newtext}/>}/>
+            <Route path='/body1' element={<Body1 Peoples={props.Peoples}
+                                                 Arraymessage={props.Arraymessage}
+                                                 dispatch={props.dispatch}
+                                                 NewMessText={props.NewMessText}/>}/>
+            <Route path='/body2' element={<Body2/>}/>
+          </Routes>
+        </div>
+        <Footer/>
+      </div>
     
   );
 }

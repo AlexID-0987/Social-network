@@ -4,5 +4,4 @@ let reducers=combineReducers({
     Statebody:bodyReducer
 })
 let store = createStore(reducers)
-console.log(store)
 export default  store

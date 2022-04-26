@@ -4,12 +4,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import store from './Reduce/Redux-store'
+import store from './Reduce/Store'
+import {Provider} from "react-redux";
 
 
 let renderproject=(state)=>{
   ReactDOM.render(
-    <>
+    <Provider store={store}>
     <BrowserRouter>
         <App Peoples={state.Statebody.Peoples}
           Arraymessage={state.Statebody.Arraymessage} 
@@ -19,7 +20,7 @@ let renderproject=(state)=>{
           store={store}/>
           
       </BrowserRouter>
-    </>,
+    </Provider>,
     document.getElementById('root')
   );
 }
