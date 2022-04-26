@@ -6,6 +6,7 @@ import Body2 from './Component/Body/Bitem2/Body2';
 import Footer from './Component/Footer/Footer';
 import Header from './Component/Header/Header';
 import Navbar from './Component/Navbar/Navbar';
+import BodyContainer from "./Component/Body/Bitem/BodyContainer";
 
 function App(props) {
   return (
@@ -14,10 +15,10 @@ function App(props) {
         <Navbar/>
         <div className='itembody'>
           <Routes>
-            <Route path='/' element={<Body Arr={props.Arr}
+            <Route path='/' element={<BodyContainer store={props.store} Arr={props.Arr}
                                            dispatch={props.dispatch}
                                            newPostText={props.Newtext}/>}/>
-            <Route path='/body' element={<Body Arr={props.Arr}
+            <Route path='/body' element={<BodyContainer store={props.store} Arr={props.Arr}
                                                dispatch={props.dispatch}
                                                newPostText={props.Newtext}/>}/>
             <Route path='/body1' element={<Body1 Peoples={props.Peoples}

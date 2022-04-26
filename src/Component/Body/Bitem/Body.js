@@ -1,7 +1,6 @@
 import React from 'react';
 import Bodycomponent from './Bodycomponent';
 import "../Bitem/body.css"
-import { actionCreiterAddPost,actionCreiterUpdatePost } from '../../../Reduce/Body-reduser';
 function Body(props) {
     
     /* let Array = [
@@ -11,13 +10,12 @@ function Body(props) {
     ] */
     let Aritem = props.Arr.map(i => <Bodycomponent mess={i.item} />)
     let newPost=React.createRef();
-    let visib = () => {
-        props.dispatch(actionCreiterAddPost());
+    let visibPost = () => {
+        props.visib()
     }
     let onPostChange=()=>{
         let newtext1 = newPost.current.value;
-        let newaction=actionCreiterUpdatePost(newtext1)
-        props.dispatch(newaction);
+        props.actionCreiterUpdate(newtext1)
     }
     return (
         <div>
@@ -27,7 +25,7 @@ function Body(props) {
                     <textarea ref={newPost} onChange={onPostChange} value={props.newPostText}/>
                 </div>
                 <div>
-                    <button onClick={visib}>Add</button>
+                    <button onClick={visibPost}>Add</button>
                 </div>
             </div>
             {Aritem}
