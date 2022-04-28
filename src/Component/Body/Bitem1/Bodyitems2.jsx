@@ -1,5 +1,4 @@
 import React from 'react';
-import { updateNewMess,sendMessage } from '../../../Reduce/Body-reduser';
 import bi2 from '../Bitem1/bodyitems2.module.css'
 const Textmess =(props)=>{
     return(
@@ -16,12 +15,11 @@ function Bodyitem2(props) {
     let Messages=props.Arraymessage.map(item=><Textmess messitem={item.mess}/>)
     let newmess=props.newmess
     let onSendMessage=()=>{
-      props.dispatch(sendMessage()) 
-       
+      props.sendMess()
     }
     let onNewmesschange=(event)=>{
      let body= event.target.value
-     props.dispatch(updateNewMess(body))
+        props.updateNewBody(body)
     }
     return (  
         <div className={bi2.item}>

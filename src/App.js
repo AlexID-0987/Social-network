@@ -24,7 +24,7 @@ function App(props) {
             <Route path='/body1' element={<Body1 Peoples={props.Peoples}
                                                  Arraymessage={props.Arraymessage}
                                                  dispatch={props.dispatch}
-                                                 NewMessText={props.NewMessText}/>}/>
+                                                 NewMessText={props.NewMessText} store={props.store}/>}/>
             <Route path='/body2' element={<Body2/>}/>
           </Routes>
         </div>
