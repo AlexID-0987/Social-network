@@ -7,7 +7,7 @@ function Body(props) {
         { item: 'I Love' },
         { item: 'Good morning' }
     ] */
-    let Aritem = props.Arr.map(i => <Bodycomponent mess={i.item} />)
+    let Aritem = props.Arr.map(i => <Bodycomponent mess={i.item} key={i.id}/>)
     let newPost=React.createRef();
     let visibPost = () => {
         props.visib()

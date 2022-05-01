@@ -21,7 +21,7 @@ const Bodyitem3=(props)=>{
 
 
 function Bodyitem1(props) {
-   let Bodypeoples=props.Peoples.map(person=><Bodyitem3 id={person.id} name={person.name}/>)
+   let Bodypeoples=props.Peoples.map(person=><Bodyitem3 id={person.id} name={person.name} key={person.id}/>)
     return ( 
        <div className={bi1.item}>
           {Bodypeoples}

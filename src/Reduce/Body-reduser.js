@@ -13,9 +13,9 @@ let initialstate={
         { id: 3, mess: 'I love live' }
     ],
     Array: [
-        { item: 'Hello' },
-        { item: 'I Love' },
-        { item: 'Good morning' }
+        {id:1, item: 'Hello' },
+        {id:2, item: 'I Love' },
+        {id:3, item: 'Good morning' }
     ],
     NewPostText:'Hello',
     NewMessageText:''
@@ -23,11 +23,8 @@ let initialstate={
 const bodyReducer =(state =initialstate,action)=>{
     switch (action.type) {
         case ADD_POST: {
-            let addit = {item: state.NewPostText}
-            let stateCopy = {...state}
-            stateCopy.Array = [...state.Array]
-            stateCopy.Array.push(addit)
-            stateCopy.NewPostText = ''
+            let addit = {id:Date.now(),item: state.NewPostText}
+            let stateCopy = {...state,NewPostText: '',Array:[...state.Array,addit]}
             return stateCopy
         }
         case UPDATE_POST: {
@@ -36,15 +33,12 @@ const bodyReducer =(state =initialstate,action)=>{
             return stateCopy
         }
         case UPDATE_NEW_MESSAGE_TEXT: {
-            let stateCopy={...state}
-            stateCopy.NewMessageText = action.newtextmess;
+            let stateCopy={...state,NewMessageText:action.newtextmess}
             return stateCopy
         }
         case SEND_MESS: {
-            let stateCopy={...state}
             let item = state.NewMessageText
-            stateCopy.NewMessageText = ''
-            stateCopy.Arraymessage.push({id: 4, mess: item})
+            let stateCopy={...state, NewMessageText : '',Arraymessage:[...state.Arraymessage, {id: Date.now(), mess: item}]}
             return stateCopy
         }
         default:
