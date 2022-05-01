@@ -4,30 +4,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import store from './Reduce/Store'
+import store from './Reduce/Redux-store'
 import {Provider} from "react-redux";
+import storeTest from "./Reduce/Store-test";
 
 
-let renderproject=(state)=>{
-  ReactDOM.render(
+ReactDOM.render(
     <Provider store={store}>
-    <BrowserRouter>
-        <App Peoples={state.Statebody.Peoples}
-          Arraymessage={state.Statebody.Arraymessage} 
-          Arr={state.Statebody.Array} dispatch={store.dispatch.bind(store)}
-          Newtext={state.Statebody.NewPostText} 
-          NewMessText={state.Statebody.NewMessageText}
-          store={store}/>
-          
-      </BrowserRouter>
+        <BrowserRouter>
+            <App Peoples={storeTest._state.Statebody.Peoples}/>
+        </BrowserRouter>,
     </Provider>,
+
     document.getElementById('root')
-  );
-}
-renderproject(store.getState())
-store.subscribe(()=>{
-  let state=store.getState()
-  renderproject(state)
-})
+);
+
+
 
 

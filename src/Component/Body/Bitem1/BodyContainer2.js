@@ -1,25 +1,19 @@
 import React from 'react';
 import { updateNewMess,sendMessage } from '../../../Reduce/Body-reduser';
-
 import Bodyitem2 from "./Bodyitems2";
+import {connect} from "react-redux";
 
-function BodyitemContainer2(props) {
-
-    let onSendMessage=()=>{
-        props.dispatch(sendMessage())
-
+const mapStateToProps=(state)=>{
+    return {
+        Arraymessage:state.Statebody.Arraymessage,
+        newmess:state.Statebody.NewMessageText,
     }
-    let onNewmesschange=(body)=>{
-
-        props.dispatch(updateNewMess(body))
-    }
-    return (
-        <div>
-           <Bodyitem2 updateNewBody={onNewmesschange} sendMess={onSendMessage}
-                      store={props.store} Arraymessage={props.Arraymessage}
-                      newmess={props.newmess} dispatch={props.dispatch.bind(props)}/>
-        </div>
-    );
 }
-
-export default BodyitemContainer2;
+const mapDispathcToProps=(dispatch)=>{
+    return {
+        updateNewBody:(body)=>{dispatch(updateNewMess(body))},
+        sendMess:()=>{dispatch(sendMessage())}
+    }
+}
+const BodyContainer2=connect(mapStateToProps,mapDispathcToProps)(Bodyitem2)
+export default BodyContainer2;

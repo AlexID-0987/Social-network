@@ -11,7 +11,6 @@ const Textmess =(props)=>{
     { id: 67, mess: 'I love live' }
 ]  */
 function Bodyitem2(props) {
-    
     let Messages=props.Arraymessage.map(item=><Textmess messitem={item.mess}/>)
     let newmess=props.newmess
     let onSendMessage=()=>{

@@ -2,7 +2,6 @@ import React from 'react';
 import Bodycomponent from './Bodycomponent';
 import "../Bitem/body.css"
 function Body(props) {
-    
     /* let Array = [
         { item: 'Hello' },
         { item: 'I Love' },

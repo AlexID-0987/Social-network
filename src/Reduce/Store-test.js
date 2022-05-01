@@ -1,5 +1,5 @@
 import bodyReducer from "./Body-reduser";
-let store={
+let storeTest={
     _state:{
         Statebody:{
             Peoples: [
@@ -38,5 +38,4 @@ let store={
     }
     
 }
-export default store
-window.store=store;
+export default storeTest

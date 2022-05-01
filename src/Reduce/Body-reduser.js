@@ -22,22 +22,31 @@ let initialstate={
 }
 const bodyReducer =(state =initialstate,action)=>{
     switch (action.type) {
-        case ADD_POST:
-            let addit = { item: state.Statebody.NewPostText }
-            state.Statebody.Array.push(addit)
-            state.Statebody.NewPostText = ''
-            return state
-        case UPDATE_POST:
-            state.Statebody.NewPostText = action.newpost;
-            return state
-        case UPDATE_NEW_MESSAGE_TEXT:
-            state.Statebody.NewMessageText = action.newtextmess;
-            return state
-        case SEND_MESS:
-            let item = state.Statebody.NewMessageText
-            state.Statebody.NewMessageText = ''
-            state.Statebody.Arraymessage.push({ id: 4, mess: item })
-            return state
+        case ADD_POST: {
+            let addit = {item: state.NewPostText}
+            let stateCopy = {...state}
+            stateCopy.Array = [...state.Array]
+            stateCopy.Array.push(addit)
+            stateCopy.NewPostText = ''
+            return stateCopy
+        }
+        case UPDATE_POST: {
+            let stateCopy={...state}
+            stateCopy.NewPostText = action.newpost;
+            return stateCopy
+        }
+        case UPDATE_NEW_MESSAGE_TEXT: {
+            let stateCopy={...state}
+            stateCopy.NewMessageText = action.newtextmess;
+            return stateCopy
+        }
+        case SEND_MESS: {
+            let stateCopy={...state}
+            let item = state.NewMessageText
+            stateCopy.NewMessageText = ''
+            stateCopy.Arraymessage.push({id: 4, mess: item})
+            return stateCopy
+        }
         default:
             return state
     }
