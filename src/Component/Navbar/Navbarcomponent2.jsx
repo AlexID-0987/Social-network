@@ -11,7 +11,7 @@ function Navbarcomponent2() {
     return (  
         <div>
             <div className={nc2.item}>
-                <NavLink to='/Body2' style={change}><label className={nc2.item1}>Maps</label></NavLink>
+                <NavLink to='/Body2' style={change}><label className={nc2.item1}>Users</label></NavLink>
             </div>
         </div>
     );
