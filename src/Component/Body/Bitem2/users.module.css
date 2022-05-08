@@ -10,3 +10,13 @@
  border: 3px black solid;
  margin: 1em;
 }
+.select{
+ font-weight: bold;
+ font-size: 1.5em;
+ border: 2px salmon solid;
+ color:white;
+ margin: 0.5em;
+}
+.count{
+ text-align: center;
+}
